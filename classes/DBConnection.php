@@ -8,6 +8,7 @@ class DBConnection{
     private $username = DB_USERNAME;
     private $password = DB_PASSWORD;
     private $database = DB_NAME;
+    private $port = DB_PORT;
     
     public $conn;
     
@@ -15,7 +16,7 @@ class DBConnection{
 
         if (!isset($this->conn)) {
             
-            $this->conn = new mysqli($this->host, $this->username, $this->password, $this->database);
+            $this->conn = new mysqli($this->host, $this->username, $this->password, $this->database, $this->port);
             
             if (!$this->conn) {
                 echo 'Cannot connect to database server';
